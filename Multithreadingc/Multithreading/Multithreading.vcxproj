@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f7087a44-6574-4732-923b-69ca27142262}</ProjectGuid>
-    <RootNamespace>MultiThreading</RootNamespace>
+    <ProjectGuid>{8193768c-19e6-4c94-a9bc-c4a476fc11c0}</ProjectGuid>
+    <RootNamespace>Multithreading</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MultiThreading.cpp" />
+    <ClCompile Include="Multithreading.cpp" />
+    <ClCompile Include="SodaLine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SodaLine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
