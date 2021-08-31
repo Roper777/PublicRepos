@@ -13,7 +13,7 @@ public:
 	int getCycle();
 	void threader(int);
 	void bottleLoader();
-	void fillSwitcher(int);
+	
 	
 private:
 	int bottle1, bottle2, bottle3, bottle4, bottle5 ;
