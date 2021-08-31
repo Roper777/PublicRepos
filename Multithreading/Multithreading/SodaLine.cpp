@@ -66,7 +66,7 @@ void SodaLine::threader(int c)
 
 				else if (bottle1 == 100)
 				{
-					cout << " \nBottle number " << bottleNum << " finished filling." << endl;
+					cout << " \nBottle number 1 finished filling." << endl; // I wanted to have it read out the 'bottleNum' originally, but doing so within threads caused some weird text spacings in the console.
 				}
 			}
 			break;
@@ -93,7 +93,7 @@ void SodaLine::threader(int c)
 
 				else if (bottle2 == 100)
 				{
-					cout << " \nBottle number " << bottleNum << " finished filling." << endl;
+					cout << " \nBottle number 2 finished filling." << endl;
 				}
 			}
 			break;
@@ -119,7 +119,7 @@ void SodaLine::threader(int c)
 
 				else if (bottle3 == 100)
 				{
-					cout << " \nBottle number " << bottleNum << " finished filling." << endl;
+					cout << " \nBottle number 3 finished filling." << endl;
 				}
 			}
 			break;
@@ -146,7 +146,7 @@ void SodaLine::threader(int c)
 
 				else if (bottle4 == 100)
 				{
-					cout << " \nBottle number " << bottleNum << " finished filling." << endl;
+					cout << " \nBottle number 4 finished filling." << endl;
 				}
 			}
 			break;
@@ -172,7 +172,7 @@ void SodaLine::threader(int c)
 
 				else if (bottle5 == 100)
 				{
-					cout << " \nBottle number " << bottleNum << " finished filling." << endl;
+					cout << " \nBottle number 5 finished filling." << endl;
 				}
 			}
 			break;
