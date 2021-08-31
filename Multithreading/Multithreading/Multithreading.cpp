@@ -3,19 +3,22 @@
 
 #include <iostream> // standard io library
 #include <thread> // required to use threads.
+#include "SodaLine.h"
 
 using namespace std; 
 
 int main()
 {
+    int cycle = 0;
     cout << "This multi-threading example will simulate a fantasy bottling line." << endl;
     cout << "5 bottles are filled at differing intervals and sent off the line." << endl;
     cout << "Once one is sent off the line, another will not take its place until all others are sent off." << endl; // do this by utilizing the 'join' function
-    int bottle1, bottle2, bottle3, bottle4, bottle5 = 0;
+ 
+    SodaLine Line1;
 
+    Line1.setCycle();
 
-    
-
+    Line1.~SodaLine();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

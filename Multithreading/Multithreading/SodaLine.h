@@ -3,16 +3,19 @@
 
 using namespace std;
 
-class SodaLine 
+class SodaLine
 {
 
-	public:
-		SodaLine();
-		~SodaLine();
-		void fillBottle(int); // maybe have a num as a parameter
-
-
-	private:
-		// int bottle1, bottle2, bottle3, bottle4, bottle5;
-
+public:
+	SodaLine();
+	~SodaLine();
+	void setCycle();
+	int getCycle();
+	void threader(int);
+	void bottleLoader();
+	
+	
+private:
+	int bottle1, bottle2, bottle3, bottle4, bottle5 ;
+	int cycle;
 };
