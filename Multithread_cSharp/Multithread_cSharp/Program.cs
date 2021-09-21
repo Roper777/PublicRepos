@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+
 
 namespace Multithread_cSharp
 {
@@ -6,7 +8,7 @@ namespace Multithread_cSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
