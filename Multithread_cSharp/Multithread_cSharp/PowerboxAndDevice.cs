@@ -14,44 +14,49 @@ namespace Multithread_cSharp
             int max = 5730; // Represents the max amount of power we can distribute to multiple processes
             int current = 0; //tracks current amount of power being used.
             Boolean full = false;
-            public int getMax()
+            
+            public int GetMax()
             {
-                return max;
+                return max; 
             }
 
-            public void editCurrent(int input, char method) //a bit more complex 'setCurrent', so I tried to name it to fit this.
-            { 
-                if((input + current) <= max)
-                { 
-                    if(method == 'p') //if we are adding the input number to the current, take this branch
+            public void EditCurrent(int input, char method) //a bit more complex 'setCurrent', so I tried to name it to fit this.
+            {
+                Boolean executed = false;
+                do
+                {
+                    if (method == 'p' && (input + current) <= max) //if we are adding the input number to the current, take this branch
                     {
                         current += input;
+                        executed = true;
                     }
 
-                    else if(method == 'm') // if we subtract the input number from the current, take this branch
+
+                    else if (method == 'm') // if we subtract the input number from the current, take this branch
                     {
                         current -= input;
+                        executed = true;
                     }
 
+                    else if (method != 'm' || method != 'p')
+                    {
+                        Console.WriteLine("Uh oh. Oh no. Invalid character received. Ending program due to bug.");
+                        System.Environment.Exit(1);
+                        break;
+                    }
                     else
                     {
-                        Console.WriteLine("Invalid character received. Ending program due to bug.");
-                        System.Environment.Exit(1);
-                    }
-                }
+                        Console.Write("Due to the current electrical load, we cannot turn this device on! We'll have to wait on the other devices to finish up.\n");
 
-                else
-                {
-                    Console.Write("Due to the current electrical load, we cannot turn this device on! We can wait or reset the box. \n");
-                    Console.WriteLine("What would you like to do? (Enter 0 to wait, or 1 to reset.");
-                }
+                    }
+                } while (executed == false);
             }
 
-            public int getCurrent()
+            public int GetCurrent()
             {
                 return current;
             }
-
+        
             public Boolean limitChecker() // compare max and current
             {
                 if(max == current)
@@ -77,39 +82,72 @@ namespace Multithread_cSharp
         int linePosition = 0; // if we have to start waiting on processes
         Boolean finished = false;
 
-        public void setName(string name)
+        public void SetName(string name)
         {
             deviceName = name;
         }
 
-        public string getName()
+        public string GetName()
         {
             return deviceName;
         }
 
-        public void setReq(int req)
+        public void SetReq(int req)
         {
             powerReq = req;
         }
 
-        public int getReq()
+        public int GetReq()
         {
             return powerReq;
         }
 
-        public void setTime(int time)
+        public void SetTime(int time)
         {
             runTime = time;
         }
 
-        public int getTime()
+        public int GetTime()
         {
             return runTime;
         }
 
 
-        public void set
-        public void switchFinishState()
+        public Device()
+        {
+            Console.WriteLine("New device being created... Please give the device a name.");
+            deviceName = Console.ReadLine();
+            Boolean valid = false;
+            while (valid == false)
+            {
+                Console.WriteLine("Device named '[0]'. Select a power usage between: 375 (A), 560 (B), or 721 (C). Type A, B, or C (Case Sensitive).", deviceName);
+
+                char nrgInput = Console.ReadLine()[0];
+                Console.Write($"You inputted {nrgInput}. ");
+                switch (nrgInput)
+                {
+                    case 'A':
+                        Console.WriteLine("This device will use 375 power.");
+                        powerReq = 375;
+                        valid = true;
+                        break;
+                    case 'B':
+                        Console.WriteLine("This device will use 560 power.");
+                        powerReq = 560;
+                        valid = true;
+                        break;
+                    case 'C':
+                        Console.WriteLine("This device will use 721 power.");
+                        powerReq = 721;
+                        valid = true;
+                        break;
+                    default:
+                        Console.WriteLine("You did not input a valid answer. Perhaps it wasn't capitalized?");
+                        break;
+                }
+            }
+        }
+        public void SwitchFinishState()
         {
             if (finished == false)
                 finished = true;
@@ -117,16 +155,17 @@ namespace Multithread_cSharp
                 finished = false;
         }
 
-        public void setPostion(int pos)
+        public void SetPostion(int pos)
         {
             linePosition = pos;
-            Console.WriteLine("Device named '{0}' is now in position {1}.", deviceName, linePosition);
+            Console.WriteLine("Device named '{0}' is now in position {1} and waiting for availability.", deviceName, linePosition);
         }
 
-        public int getPosition()
+        public int GetPosition()
         {
             return linePosition;
         }
+
 
     }
 }
