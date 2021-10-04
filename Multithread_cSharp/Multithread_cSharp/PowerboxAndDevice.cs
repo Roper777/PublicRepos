@@ -155,16 +155,33 @@ namespace Multithread_cSharp
                 finished = false;
         }
 
-        public void SetPostion(int pos)
-        {
-            linePosition = pos;
-            Console.WriteLine("Device named '{0}' is now in position {1} and waiting for availability.", deviceName, linePosition);
-        }
+        //public void SetPostion(int pos)
+        //{
+        //    linePosition = pos;
+        //    Console.WriteLine("Device named '{0}' is now in position {1} and waiting for availability.", deviceName, linePosition);
+        //}
 
-        public int GetPosition()
+        //public int GetPosition()
+        //{
+        //    return linePosition;
+        //}
+
+        public void updatePosition()
         {
-            return linePosition;
-        }
+            switch (linePosition)
+            {
+                case 0:
+                    Console.WriteLine("This isn't waiting at all. We'll just progress normally.");
+                    break;
+                case 1:
+                    Console.WriteLine("Time to set this one to be next!");
+                    linePosition = 0;
+                    break;
+                case linePosition >= 2:
+
+                    break;
+            }
+            // These end up not being used due to the numbers I chose, but I'm keeping them in if I want to add more devices to be active
 
         public int grab
 
