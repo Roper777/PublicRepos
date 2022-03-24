@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector> //a vector library is NEEDED to use vectors
+#include "Header.cpp"
 
 using namespace std;
 
@@ -52,4 +53,5 @@ int main()
 	}
 	cout << pickleJars.size() << " is the current size." << endl;
 	cout << pickleJars.capacity() << " is the vector capacity now." << endl;
+
 }
