@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4be06291-646c-4b4d-bdc9-078b700261b3}</ProjectGuid>
-    <RootNamespace>Vectorprac</RootNamespace>
+    <ProjectGuid>{e4f05426-e3dc-4066-b7df-c71ea99d2954}</ProjectGuid>
+    <RootNamespace>Factoryc</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="basics.cpp" />
-    <ClCompile Include="Header.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="Factorybase.h" />
+    <ClInclude Include="Sedan.h" />
+    <ClInclude Include="Truck.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
